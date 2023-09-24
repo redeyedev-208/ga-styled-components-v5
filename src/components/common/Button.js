@@ -19,7 +19,8 @@ import styled, { css } from 'styled-components';
 
 const Button = styled.button`
   color: white;
-  background: ${(props) => (props.secondary ? '#2c3e50' : '#2a5298')};
+  background: ${(props) =>
+    props.secondary ? props.theme.secondaryColor : props.theme.primaryColor};
   /* background: #f8049c; */
   font-weight: bold;
   // Don't write compost like this, no syntax highlighting is available.

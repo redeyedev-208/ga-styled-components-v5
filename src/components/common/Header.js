@@ -13,7 +13,11 @@ const HeaderWrapper = styled.header`
   padding: 0 16px;
   position: fixed;
   top: 0;
-  background-image: linear-gradient(to right, #005aa7, #fffde4);
+  background-image: linear-gradient(
+    to right,
+    ${(p) => p.theme.primaryColor},
+    ${(p) => p.theme.secondaryColor} #fffde4
+  );
   border-bottom: 3px solid #005aa7;
 `;
 
@@ -26,7 +30,7 @@ const Menu = styled.nav`
   top: 60px;
   padding: 8px;
   box-sizing: border-box;
-  border-bottom: 3px solid #005aa7;
+  border-bottom: 3px solid ${(p) => p.theme.secondaryColor} #fffde4;
   background: white;
 
   // Add the media query styles here.

@@ -1,4 +1,4 @@
-import { createGlobalStyle } from 'styled-components';
+import { createGlobalStyle, ThemeProvider } from 'styled-components';
 import { Routes, Route } from 'react-router-dom';
 import Home from 'components/pages/Home';
 import Login from 'components/pages/Login';
@@ -14,9 +14,18 @@ body {
 }
 `;
 
+// We need to create a theme for the ThemeProvider.
+// This is where we can store colors, fonts, etc.
+// All we need to do is create an object with the values we want.
+// So styled components will inject variables as props into our styled components.
+const theme = {
+  primaryColor: '#2a5298',
+  secondaryColor: '#2c3e50',
+};
+
 function App() {
   return (
-    <>
+    <ThemeProvider theme={theme}>
       <GlobalStyle />
       <Routes>
         <Route
@@ -29,7 +38,7 @@ function App() {
           element={<Login />}
         />
       </Routes>
-    </>
+    </ThemeProvider>
   );
 }
 
