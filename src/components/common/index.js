@@ -2,3 +2,5 @@
 // Add a bunch of components as imports.
 // So it is a more efficient way to import components.
 export * from './Button';
+export * from './PageLayout';
+export * from './Header';
