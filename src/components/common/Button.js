@@ -19,7 +19,7 @@ import styled, { css } from 'styled-components';
 
 const Button = styled.button`
   color: white;
-  background: ${(props) => (props.secondary ? 'black' : '#f8049c')};
+  background: ${(props) => (props.secondary ? '#2c3e50' : '#2a5298')};
   /* background: #f8049c; */
   font-weight: bold;
   // Don't write compost like this, no syntax highlighting is available.
