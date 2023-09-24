@@ -1,5 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { PageLayout, Input, PasswordInput, Button } from 'components/common';
+import {
+  PageLayout,
+  Input,
+  PasswordInput,
+  Button,
+  Spinner,
+} from 'components/common';
 import styled from 'styled-components';
 
 const Form = styled.form`
@@ -17,12 +23,10 @@ const Form = styled.form`
     margin: 10px 0;
   }
 
-  // We want to target the first Button component inside the Form component.
   > ${Button}:first-of-type {
     margin-top: 40px;
   }
 
-  // We want to target the second Button component inside the Form component.
   > ${Input} {
     margin-top: 20px;
   }
@@ -31,14 +35,9 @@ const Form = styled.form`
 let timeout;
 
 export default function Login() {
-  // We are creating state for the form fields.
-  // The initial state will be an empty string.
   const [formFields, setFormFields] = useState({ username: '', password: '' });
   const [loading, setLoading] = useState(false);
 
-  // We are creating a function to handle the input change.
-  // The formFields will be updated with the new value.
-  // The only difference between the two is the name.
   function handleInputChange(e) {
     e.persist();
     setFormFields((s) => ({
@@ -68,7 +67,7 @@ export default function Login() {
       <h1>Login</h1>
       <Form onSubmit={handleSubmit}>
         {loading ? (
-          'Loading...'
+          <Spinner />
         ) : (
           <>
             <span>Login if you have an account</span>
