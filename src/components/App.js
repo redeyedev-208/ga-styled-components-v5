@@ -1,5 +1,7 @@
-import { Button } from 'components/common';
 import { createGlobalStyle } from 'styled-components';
+import { Routes, Route } from 'react-router-dom';
+import Home from 'components/pages/Home';
+import Login from 'components/pages/Login';
 
 const GlobalStyle = createGlobalStyle`
 // This is how we apply global styles.
@@ -16,10 +18,17 @@ function App() {
   return (
     <>
       <GlobalStyle />
-      <h1>App</h1>
-      <Button>Primary</Button>
-      <Button secondary>Secondary</Button>
-      <Button large>Large</Button>
+      <Routes>
+        <Route
+          path='/'
+          element={<Home />}
+        />
+
+        <Route
+          path='/login'
+          element={<Login />}
+        />
+      </Routes>
     </>
   );
 }
