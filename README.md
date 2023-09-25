@@ -1,71 +1,24 @@
-# Getting Started with Create React App
+# React with Styled Components V5
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Using styled components is really straight forward but it can be quite confusing at time.
+To make it easier I've put together this project that you are free to use on your own projects.
+There is no logic in regards to registering and account but the goal was to create a mobile first design.
 
-## Available Scripts
+- This project has the following
+  - Toggling of light and dark mode
+  - Hamburger display that is using custom css
+  - Routing via `react-router-dom`
 
-In the project directory, you can run:
+## Toggling, Gradient Layout & Responsive Design (Requirements)
 
-### `npm start`
+All of the code in this repos will help you get comfortable with using styled components within a React Project. You can go ahead and clone this project.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+The project is passing accessibility contrast and other initial checks when using Deque (AxeDeque) extensions when running an accessibility check on a site.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+To see what packages are needed look at the `package.json` file that will tell you what is needed for the end result of the deployed project.
 
-### `npm test`
+## Hosted on Netlify
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+To see this project live in the browser feel free to click on the link below:
 
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-# ga-styled-components-v5
+- [GA Styled Components V5](https://ga-styled-components-v5-with-toggle.netlify.app/)
