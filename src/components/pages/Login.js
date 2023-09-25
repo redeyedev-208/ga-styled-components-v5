@@ -11,6 +11,7 @@ import styled from 'styled-components';
 const Form = styled.form`
   width: 100%;
   max-width: 400px;
+
   background: white;
   border: 1px solid #eee;
   padding: 16px;

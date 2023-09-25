@@ -1,6 +1,7 @@
-import { useState } from 'react';
-import styled from 'styled-components';
+import { useState, useContext } from 'react';
+import styled, { ThemeContext } from 'styled-components';
 import { Link as ReactRouterLink, useLocation } from 'react-router-dom';
+import { Toggle } from './Toggle';
 
 // Gradients taken from https://uigradients.com/#Rastafari
 // Alternatively you can use: https://coolors.co/colors to find a color palette.
@@ -16,7 +17,7 @@ const HeaderWrapper = styled.header`
   background-image: linear-gradient(
     to right,
     ${(p) => p.theme.primaryColor},
-    ${(p) => p.theme.secondaryColor} #fffde4
+    ${(p) => p.theme.secondaryColor}
   );
   border-bottom: 3px solid #005aa7;
 `;
@@ -30,8 +31,8 @@ const Menu = styled.nav`
   top: 60px;
   padding: 8px;
   box-sizing: border-box;
-  border-bottom: 3px solid ${(p) => p.theme.secondaryColor} #fffde4;
-  background: white;
+  border-bottom: 3px solid ${(p) => p.theme.secondaryColor};
+  background: ${(p) => p.theme.bodyBackgroundColor};
 
   // Add the media query styles here.
   // Using our mobile first approach, we will add the styles for mobile screens
@@ -63,7 +64,7 @@ const StyledLink = styled(Link)`
   box-sizing: border-box;
   margin: auto 0;
   font-weight: ${(props) => (props.isActive ? 'bold' : 'normal')};
-  color: black;
+  color: white;
 `;
 
 // Custom styled component for the hamburger menu icon.
@@ -71,13 +72,13 @@ const MobileMenuIcon = styled.div`
   margin: auto 0 auto auto;
   width: 25px;
   min-width: 25px;
-  padding: 5px;
+  padding: px;
   // We want to target the divs inside the MobileMenuIcon component.
   // These are the divs that will be the hamburger menu.
   // Also known as the children of the MobileMenuIcon component.
   > div {
     height: 3px;
-    background: black;
+    background: white;
     margin: 5px 0;
     width: 100%;
   }
@@ -91,6 +92,8 @@ const MobileMenuIcon = styled.div`
 export function Header() {
   const [menuIsOpen, setMenuIsOpen] = useState(false);
   const { pathname } = useLocation();
+  // We are getting the values from the ThemeContext.
+  const { id, setTheme } = useContext(ThemeContext);
 
   return (
     <HeaderWrapper>
@@ -112,6 +115,10 @@ export function Header() {
         >
           Login
         </StyledLink>
+        <Toggle
+          isActive={id === 'darkTheme'}
+          onToggle={setTheme}
+        />
       </Menu>
     </HeaderWrapper>
   );

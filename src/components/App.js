@@ -1,31 +1,35 @@
+import { useState } from 'react';
 import { createGlobalStyle, ThemeProvider } from 'styled-components';
 import { Routes, Route } from 'react-router-dom';
 import Home from 'components/pages/Home';
 import Login from 'components/pages/Login';
+import LightTheme from 'themes/lightTheme';
+import DarkTheme from 'themes/darkTheme';
 
 const GlobalStyle = createGlobalStyle`
 // This is how we apply global styles.
 body {
-  background: white;
+  background: ${(props) => props.theme.bodyBackgroundColor};
   min-height: 100vh;
   margin: 0;
-  color: black;
+  /* padding-top: 5px; */
+  margin-top: 5px;
+  color: ${(props) => props.theme.bodyFontColor};
   font-family: 'Kaushan Script', cursive;
 }
 `;
 
-// We need to create a theme for the ThemeProvider.
-// This is where we can store colors, fonts, etc.
-// All we need to do is create an object with the values we want.
-// So styled components will inject variables as props into our styled components.
-const theme = {
-  primaryColor: '#2a5298',
-  secondaryColor: '#2c3e50',
-};
-
 function App() {
+  const [theme, setTheme] = useState(LightTheme);
   return (
-    <ThemeProvider theme={theme}>
+    <ThemeProvider
+      theme={{
+        ...theme,
+        setTheme: () => {
+          setTheme((s) => (s.id === 'lightTheme' ? DarkTheme : LightTheme));
+        },
+      }}
+    >
       <GlobalStyle />
       <Routes>
         <Route
